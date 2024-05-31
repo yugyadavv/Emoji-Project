@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Project</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #5a6468ee, #45a195);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        hr {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 2px solid #ccc;
+        }
+
+        #text {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #emoji_table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            box-shadow: 1px 2px 40px black;
+        }
+
+        /* #emoji_table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        } */
+        #emoji_table tr{
+            transition: all .5s;
+        }
+
+        #emoji_table tr:hover {
+            transform:scale(1.2);
+            background: linear-gradient(to right, #5198acee, #5da79d);
+            box-shadow: 1px 2px 3px black;
+        }
+
+        #emoji_table th, #emoji_table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #emoji_table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        #emoji_table td {
+            color: #34423c;
+            cursor: pointer;}
+
+        #emoji_table td:first-child {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #copied-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #272a2d;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Emojee - Emoji 🔍 Application</h1>
+    <hr>
+    <input type="text" id="text" placeholder="Emojee Search">
+    <table id="emoji_table"></table>
+    <div id="copied-message">Emoji code copied to clipboard!</div>
+  
+    <script src="./emoji.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
